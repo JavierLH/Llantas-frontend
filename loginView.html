@@ -25,7 +25,7 @@
                 </div>
                 <!-- Registro contraseña -->
                 <div class="mb-6">
-                  <input id="Contraseña" type="password" aria-label="ingrese su contraseña"
+                  <input id="Contrasena" type="password" aria-label="ingrese su contraseña"
                   class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   placeholder="Contraseña"/>
                 </div>
@@ -54,18 +54,31 @@
       </section>
 </body>
 <script>
-function login(){
-    var user, password
+  function onLoggin(){
+      
+      const usuario = document.getElementById("Usuario");
+      const password = document.getElementById('Contrasena')
+      axios({
+          method:"POST",
+          url: 'https://adminllantas-backend-production.up.railway.app/login',
+          data:{
+              "nombre": usuario.value,
+              "password": password.value
+          }
+      }).then((res)=>{
+          console.log(res);
+          if(res.data==true){
+            window.location.href = "https://javierlh.github.io/Llantas-frontend/adminiatradorView.html";
+          }else{
+            const x=document.getElementById("error")
+            x.innerHTML="Usuario o contraseña incorrectos"
+          }
+      }).catch(error=>{
+          console.log(error);
+          throw new Error(error);
+      });
+  }
 
-    user = document.getElementById("Usuario").value;
-    password = document.getElementById("Contraseña").value;
-
-    if(user == "Admin" && password == "qwerty"){
-        //alert("Bienvenido")
-        location.href = "adminiatradorView.html"
-    }else{
-        alert("Credenciales incorrectas")
-    }
-}
 </script>
+
 </html>
