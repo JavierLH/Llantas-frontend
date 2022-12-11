@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Iniciar sesión</title>
     <link rel="shortcut icon" href="/img/icono.png">
 
@@ -70,16 +71,38 @@
       }).then((res)=>{
           console.log(res);
           if(res.data==true){
+            mostrarAlertaIniciarSesionCorrecto()
             window.location.href = "https://javierlh.github.io/Llantas-frontend/adminiatradorView.html";
           }else{
-            //const x=document.getElementById("error")
-            //x.innerHTML="Error, usuario o contraseña incorrecto"
+           
             console.log("Usuario y contraseña incorrectos")
+            mostrarAlertaIniciarSesionError()
+
           }
       }).catch(function (error) {
               console.log(error)
               //mostrarAlertaAgregarCorrecto()
           })
+  }
+
+  function mostrarAlertaIniciarSesionCorrecto(){
+      swal({
+      title: "Usuario verificado",
+      text: "Bienvenid@ al sistema",
+      icon: "success",
+      button: "Aceptar",
+      
+    });
+  }
+
+  function mostrarAlertaIniciarSesionError(){
+      swal({
+      title: "Usuario no verificado",
+      text: "Usuario y contraseña incorrectos",
+      icon: "warning",
+      button: "Aceptar",
+      
+    });
   }
 
 </script>
