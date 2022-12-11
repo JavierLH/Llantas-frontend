@@ -205,7 +205,7 @@ window.addEventListener('click',(e)=>{
         let estatus ="1"
         if (nombre !="" && categoria!="" && estatus!="" ) {
         
-          axios.post("http://localhost:1024/", {
+          axios.post("http://localhost:1024/crearProveedor", {
               nombreEmpresa : nombre,
               categoria: categoria,
               estatus: estatus
