@@ -72,12 +72,13 @@
           if(res.data==true){
             window.location.href = "https://javierlh.github.io/Llantas-frontend/adminiatradorView.html";
           }else{
-            console.log("Error, usuario o contraseña incorrecto")
+            const x=document.getElementById("error")
+            x.innerHTML="Error, usuario o contraseña incorrecto"
           }
-      }).catch(error=>{
-          console.log(error);
-          throw new Error(error);
-      });
+      }).catch(function (error) {
+              console.log(error)
+              //mostrarAlertaAgregarCorrecto()
+          })
   }
 
 </script>
