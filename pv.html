@@ -125,7 +125,7 @@
       method :'POST'
 
     }
-    axios.get('http://localhost:1024/proveedores')
+    axios.get('https://adminllantas-backend-production.up.railway.app/proveedores')
     .then(response => {
       users = response.data;  
       users.forEach(element => {
