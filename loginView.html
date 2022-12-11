@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Login</title>
-    <link rel="shortcut icon" href="/img/icono.png">
+    <!-- <link rel="shortcut icon" href="/img/icono.png"> --> 
 </head>
 <body>
   <section class="h-screen">
     <div class="container px-6 py-12 h-full">
       <div class="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
         <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
-          <img alt="Logo de la empresa" src="/img/Logo.png">
+          <!-- <img alt="Logo de la empresa" src="/img/Logo.png"> --> 
            </div>
             <div class="md:w-8/12 lg:w-5/12 lg:ml-20">
               <form>
@@ -54,7 +54,6 @@
       </section>
 </body>
 <script>
-
 function login(){
     var user, password
 
@@ -68,21 +67,5 @@ function login(){
         alert("Credenciales incorrectas")
     }
 }
-
-  var users;
-    //var cont = 0;
-    const tabla = document.querySelector('#cuerpo');
-    const opciones ={
-      method :'POST'
-
-    }
-    axios.get('http://localhost:1024/obtenerUsuario')
-    .then(response => {
-      users = response.data; 
-      console.log(users);
-  })
-  .catch(e => {
-      console.log(e);
-  })
 </script>
 </html>
