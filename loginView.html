@@ -75,10 +75,10 @@
             const x=document.getElementById("error")
             x.innerHTML="Error, usuario o contraseña incorrecto"
           }
-      }).catch(function (error) {
-              console.log(error)
-              //mostrarAlertaAgregarCorrecto()
-          })
+      }).catch(error=>{
+          console.log(error);
+          throw new Error(error);
+      });
   }
 
 </script>
