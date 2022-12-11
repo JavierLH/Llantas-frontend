@@ -364,20 +364,11 @@ window.addEventListener('click',(e)=>{
 
     //codigo para eliminar un empleado 
     function eliminaEmpleado(params) {
-      
-    }
-  const datosTabla1 = document.getElementById('tbDatosEmpleado')
-  datosTabla1.addEventListener('click',(e)=>{
-    console.log(e.target.parentElement.parentElement.children[0].textContent)//aqui obtengo el id cada vez que doy clic en el boton
+      const datosTabla1 = document.getElementById('tbDatosEmpleado')
+      datosTabla1.addEventListener('click',(e)=>{
+      console.log(e.target.parentElement.parentElement.children[0].textContent)//aqui obtengo el id cada vez que doy clic en el boton
 
-   
-  })
-
-    var btEliminar = document.getElementById("deleteEmpleado");
-    btEliminar.addEventListener ("click", function () {
-      let idEmpleado = document.getElementById ("nombreEmpleado").value;
-        
-          axios.post("https://adminllantas-backend-production.up.railway.app/elimina", {
+      axios.post("https://adminllantas-backend-production.up.railway.app/elimina", {
              idEmpleado:idEmpleado
               
           })
@@ -389,8 +380,11 @@ window.addEventListener('click',(e)=>{
               console.log(error)
               //mostrarAlertaAgregarCorrecto()
           })
-        
-    })
+      })
+      
+    }
+  
+
     function mostrarAlertaAgregarCorrecto(){
       swal({
       title: "Listo",
