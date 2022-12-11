@@ -163,6 +163,25 @@
           </div> 
 </body>
 <script>
+
+$(document).ready( function () {
+    $('#tbDatosEmpleado').DataTable(
+        {
+    language: {
+        processing:     "Traitement en cours...",
+        search:         "Buscar :",
+        
+        paginate: {
+            first:      "Primero",
+            previous:   "Anterior",
+            next:       "Siguiente",
+            last:       "Anterior"
+        },
+       
+  }
+    }
+    );
+} );
     var users;
     //var cont = 0;
     const tabla = document.querySelector('#cuerpo');
@@ -199,25 +218,6 @@
       console.log(e);
   })
 
-
-  $(document).ready( function () {
-    $('#tbDatosEmpleado').DataTable(
-        {
-    language: {
-        processing:     "Traitement en cours...",
-        search:         "Buscar :",
-        
-        paginate: {
-            first:      "Primero",
-            previous:   "Anterior",
-            next:       "Siguiente",
-            last:       "Anterior"
-        },
-       
-    }
-}
-    );
-} );
 
 function btn_menu(){
   window.location.href = "https://javierlh.github.io/Llantas-frontend/adminiatradorView.html";
