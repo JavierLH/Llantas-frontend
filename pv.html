@@ -123,7 +123,6 @@
     const tabla = document.querySelector('#cuerpo');
     const opciones ={
       method :'POST'
-
     }
     axios.get('https://adminllantas-backend-production.up.railway.app/proveedores')
     .then(response => {
@@ -232,7 +231,7 @@ window.addEventListener('click',(e)=>{
         let categoria = document.getElementById ("categoria").value;
         let estatus ="1"
         //if (nombre !="" && categoria !="" ) {
-          axios.post("http://localhost:1024/actualizaProveedor", {
+          axios.post("https://adminllantas-backend-production.up.railway.app/actualizaProveedor", {
               nombre : nombre,
               nombreEmpresa: nombre,
               categoria: categoria,
@@ -261,24 +260,24 @@ window.addEventListener('click',(e)=>{
    
   })
 
-    var btEliminar = document.getElementById("deleteEmpleado");
-    btEliminar.addEventListener ("click", function () {
-      let idEmpleado = document.getElementById ("nombreEmpleado").value;
+  //   var btEliminar = document.getElementById("deleteEmpleado");
+  //   btEliminar.addEventListener ("click", function () {
+  //     let idEmpleado = document.getElementById ("nombreEmpleado").value;
         
-          axios.post("http://localhost:1024/elimina", {
-             idEmpleado:idEmpleado
+  //         axios.post("http://localhost:1024/elimina", {
+  //            idEmpleado:idEmpleado
               
-          })
-          .then (function (respuesta) {
-              console.log(respuesta)
-              mostrarAlertaEliminar()
-          })
-          .catch(function (error) {
-              console.log(error)
-              //mostrarAlertaAgregarCorrecto()
-          })
+  //         })
+  //         .then (function (respuesta) {
+  //             console.log(respuesta)
+  //             mostrarAlertaEliminar()
+  //         })
+  //         .catch(function (error) {
+  //             console.log(error)
+  //             //mostrarAlertaAgregarCorrecto()
+  //         })
         
-    })
+  //   })
 
 
   
