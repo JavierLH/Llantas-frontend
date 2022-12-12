@@ -60,12 +60,16 @@
       
       const usuario = document.getElementById("Usuario");
       const password = document.getElementById('Contrasena')
+      //const idRol = document.getElementById('Contrasena')
+
       axios({ 
           method:"POST",
           url: 'https://adminllantas-backend-production.up.railway.app/login',
           data:{
               "nombre": usuario.value,
               "password": password.value
+              //"idRol": idRol.value,
+
           }
       }).then((res)=>{
           console.log(res);

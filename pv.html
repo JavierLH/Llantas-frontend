@@ -26,7 +26,7 @@
                         <th scope="col">Nombre de Empresa</th>
                         <th scope="col">Categoria</th>
                         <th scope="col">Estatus</th>
-                        <th>Acciones</th>
+                        
                     </tr>
                     </thead>
                     <tbody id="cuerpo">
@@ -133,10 +133,7 @@
                     <td scope="row">${element.nombreEmpresa}</td>
                     <td id="cat">${element.categoria}</td>
                     <td id="es">${element.estatus}</td>
-                    <th> 
-                      <button id="ed" class="btn btn-warning " style="width: 100%;" data-bs-toggle="modal" data-bs-target="#editar">Editar</button>
-                      <button id="deleteProveedor" class="btn btn-danger" style="width: 100%;">Eliminar</button>
-                    </th>
+                    
                   </tr> 
 
         ` 
@@ -222,61 +219,6 @@ window.addEventListener('click',(e)=>{
 
         }
     })
-
-    //codigo para editar 
-    var btEditar = document.getElementById("enviarProveedorEditar");
-    btEditar.addEventListener ("click", function () {
-        let anombreEmpresa= document.getElementById ("anombreEmpresa").value;
-        let aCategoria = document.getElementById ("aCategoria").value;
-        let estatus ="1"
-        //if (nombre !="" && categoria !="" ) {
-          axios.post("https://adminllantas-backend-production.up.railway.app/actualizaProveedor", {
-              nombreEmpresa : anombreEmpresa,
-              categoria: aCategoria,
-              estatus: estatus
-          })
-          .then (function (respuesta) {
-              console.log(respuesta)
-              mostrarAlertaEditar()
-          })
-          .catch(function (error) {
-              console.log(error)
-              //mostrarAlertaAgregarCorrecto()
-          })
-        //}else{
-           //mostrarAlertaAgregarError()
-        //}
-    })
-
-    //codigo para eliminar un empleado 
-
-  const datosTabla1 = document.getElementById('tbDatosEmpleado')
-  //let id = document.getElementById('idUser')
-  datosTabla1.addEventListener('click',(e)=>{
-    console.log(e.target.parentElement.parentElement.children[0].textContent)//aqui obtengo el id cada vez que doy clic en el boton
-
-   
-  })
-
-  //   var btEliminar = document.getElementById("deleteEmpleado");
-  //   btEliminar.addEventListener ("click", function () {
-  //     let idEmpleado = document.getElementById ("nombreEmpleado").value;
-        
-  //         axios.post("http://localhost:1024/elimina", {
-  //            idEmpleado:idEmpleado
-              
-  //         })
-  //         .then (function (respuesta) {
-  //             console.log(respuesta)
-  //             mostrarAlertaEliminar()
-  //         })
-  //         .catch(function (error) {
-  //             console.log(error)
-  //             //mostrarAlertaAgregarCorrecto()
-  //         })
-        
-  //   })
-
 
   
     function mostrarAlertaAgregarCorrecto(){

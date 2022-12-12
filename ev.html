@@ -369,33 +369,8 @@ window.addEventListener('click',(e)=>{
 
     //codigo para eliminar un empleado 
     function eliminaEmpleado() {
-      // let cont = 0
-      // let index =1
-
-      // window.addEventListener('click',(e)=>{
-      //   if (e.target.matches(".btn btn-danger")) {
-      //     let idEmpleado =e.target.parentElement.parentElement.children;
-      //     axios.post("https://adminllantas-backend-production.up.railway.app/elimina", {
-      //        idEmpleado:idEmpleado 
-      //     })
-      //     .then (function (respuesta) {
-      //         console.log(respuesta)
-      //         mostrarAlertaEliminar()
-      //     })
-      //     .catch(function (error) {
-      //         console.log(error)
-      //         //mostrarAlertaAgregarCorrecto()
-      //     })
-          
-      //   }
-      //   if (e.target.matches(".Aceptar")) {
-      //     cont=0
-      //   }
-        
-      // })
+      
       let idEmpleado = document.getElementById("idEmpleado").value
-      //let idEmpleado = "2"
-      //let estatus = document.getElementById ("estatusEmpleadoA").value;
       axios.post("https://adminllantas-backend-production.up.railway.app/elimina", {
              idEmpleado:idEmpleado 
           })
@@ -405,6 +380,7 @@ window.addEventListener('click',(e)=>{
           })
           .catch(function (error) {
               console.log(error)
+              mostrarAlertaEliminarError()
               //mostrarAlertaAgregarCorrecto()
           })
       
