@@ -223,17 +223,16 @@ window.addEventListener('click',(e)=>{
         }
     })
 
-
     //codigo para editar 
     var btEditar = document.getElementById("enviarProveedorEditar");
     btEditar.addEventListener ("click", function () {
-        let nombre = document.getElementById ("anombreEmpresa").value;
-        let categoria = document.getElementById ("aCategoria").value;
+        let anombreEmpresa= document.getElementById ("anombreEmpresa").value;
+        let aCategoria = document.getElementById ("aCategoria").value;
         let estatus ="1"
         //if (nombre !="" && categoria !="" ) {
           axios.post("https://adminllantas-backend-production.up.railway.app/actualizaProveedor", {
-              nombreEmpresa : nombre,
-              categoria: categoria,
+              nombreEmpresa : anombreEmpresa,
+              categoria: aCategoria,
               estatus: estatus
           })
           .then (function (respuesta) {
