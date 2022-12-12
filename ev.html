@@ -393,9 +393,9 @@ window.addEventListener('click',(e)=>{
       //   }
         
       // })
-      
-      let idEmpleado = "2"
-      let estatus = document.getElementById ("estatusEmpleadoA").value;
+      let idEmpleado = document.getElementById("idEmpleado")
+      //let idEmpleado = "2"
+      //let estatus = document.getElementById ("estatusEmpleadoA").value;
       axios.post("https://adminllantas-backend-production.up.railway.app/elimina", {
              idEmpleado:idEmpleado 
           })
