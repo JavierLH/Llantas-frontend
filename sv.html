@@ -20,7 +20,7 @@
             </div> 
         
             <div class="card-body">
-                <table id="tbDatosProveedor" class="table table-dark table-striped">
+                <table id="tbDatosSucursal" class="table table-dark table-striped">
                     <thead>
                     <tr>
                         <th scope="col">Nombre de Sucursal</th>
@@ -55,7 +55,7 @@
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                      <button id="enviarProveedor" type="button" class="btn btn-primary" onclick="mostrarAlertaEditar()" >Guardar Sucursal</button>
+                      <button id="enviarSucursal type="button" class="btn btn-primary" onclick="mostrarAlertaEditar()" >Guardar Sucursal</button>
                     </div>
                   </div>
                 </div>
@@ -83,7 +83,7 @@
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                      <button id="enviarProveedorEditar" type="button" class="btn btn-primary" >Guardar</button>
+                      <button id="enviarSucursalEditar" type="button" class="btn btn-primary" >Guardar</button>
                     </div>
                   </div>
                 </div>
@@ -133,7 +133,7 @@
                     <td id="cat">${element.ciudad}</td>
                     <th> 
                       <button id="ed" class="btn btn-warning " style="width: 100%;" data-bs-toggle="modal" data-bs-target="#editar">Editar</button>
-                      <button id="deleteProveedor" class="btn btn-danger" style="width: 100%;">Eliminar</button>
+                      <button id="deleteSucursal" class="btn btn-danger" style="width: 100%;">Eliminar</button>
                     </th>
                   </tr> 
 
@@ -172,7 +172,7 @@
   //para cargar los datos a el modal depende al evento seleccionado
 const datosTabla = document.getElementById('tbDatosSucursal')
 //const datosTabla = document.querySelector('#cuerpo');
-const modalEditarProveedor = document.getElementById('editar')
+const modalEditarSucursal = document.getElementById('editar')
 const inputs = document.getElementsByName('edit')
  let cont = 0
 let index =1
@@ -220,7 +220,7 @@ window.addEventListener('click',(e)=>{
     })
 
     //codigo para editar 
-    var btEditar = document.getElementById("enviarProveedorEditar");
+    var btEditar = document.getElementById("enviarSucursalEditar");
     btEditar.addEventListener ("click", function () {
         let anombreEmpresa= document.getElementById ("anombreEmpresa").value;
         let aCategoria = document.getElementById ("aCategoria").value;
