@@ -364,19 +364,16 @@ window.addEventListener('click',(e)=>{
         // }
     //})
 
-    const datosTabla1 = document.getElementById('tbDatosEmpleado')
-      datosTabla1.addEventListener('click',(e)=>{
-        //id = e.target.parentElement.parentElement.children[0].textContent
-      console.log(e.target.parentElement.parentElement.children[5].textContent)//aqui obtengo el id cada vez que doy clic en el boton
-    })
 
     //codigo para eliminar un empleado 
     function eliminaEmpleado() {
-      //let id 
-      
-      let idEmpleado = "2"
-      //let estatus = document.getElementById ("estatusEmpleadoA").value;
-      axios.post("https://adminllantas-backend-production.up.railway.app/elimina", {
+      let cont = 0
+      let index =1
+
+      window.addEventListener('click',(e)=>{
+        if (e.target.matches(".btn btn-danger")) {
+          let idEmpleado =e.target.parentElement.parentElement.children;
+          axios.post("https://adminllantas-backend-production.up.railway.app/elimina", {
              idEmpleado:idEmpleado 
           })
           .then (function (respuesta) {
@@ -387,6 +384,27 @@ window.addEventListener('click',(e)=>{
               console.log(error)
               //mostrarAlertaAgregarCorrecto()
           })
+          
+        }
+        if (e.target.matches(".Aceptar")) {
+          cont=0
+        }
+        
+      })
+      
+      //let idEmpleado = "2"
+      //let estatus = document.getElementById ("estatusEmpleadoA").value;
+      // axios.post("https://adminllantas-backend-production.up.railway.app/elimina", {
+      //        idEmpleado:idEmpleado 
+      //     })
+      //     .then (function (respuesta) {
+      //         console.log(respuesta)
+      //         mostrarAlertaEliminar()
+      //     })
+      //     .catch(function (error) {
+      //         console.log(error)
+      //         //mostrarAlertaAgregarCorrecto()
+      //     })
       
       
     }
