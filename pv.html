@@ -227,13 +227,12 @@ window.addEventListener('click',(e)=>{
     //codigo para editar 
     var btEditar = document.getElementById("enviarProveedorEditar");
     btEditar.addEventListener ("click", function () {
-        let nombre = document.getElementById ("nombreEmpresa").value;
-        let categoria = document.getElementById ("categoria").value;
+        let nombre = document.getElementById ("anombreEmpresa").value;
+        let categoria = document.getElementById ("aCategoria").value;
         let estatus ="1"
         //if (nombre !="" && categoria !="" ) {
           axios.post("https://adminllantas-backend-production.up.railway.app/actualizaProveedor", {
-              nombre : nombre,
-              nombreEmpresa: nombre,
+              nombreEmpresa : nombre,
               categoria: categoria,
               estatus: estatus
           })
