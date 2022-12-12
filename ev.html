@@ -40,7 +40,7 @@
                 <table id="tbDatosEmpleado" class="table table-dark table-striped">
                     <thead>
                     <tr>
-                     
+                        <th scope="col">id</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Apellido Paterno</th>
                         <th scope="col">Apellido Materno</th>
@@ -197,7 +197,7 @@ $(document).ready( function () {
       users.forEach(element => {
         tabla.innerHTML += `
                   <tr>
-                    
+                    <td scope="row">${element.idEmpleado}</td>
                     <td scope="row">${element.nombre}</td>
                     <td id="ap">${element.apellidoPaterno}</td>
                     <td id="am">${element.apellidoMaterno}</td>
