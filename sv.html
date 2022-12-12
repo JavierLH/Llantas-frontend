@@ -130,7 +130,7 @@
         tabla.innerHTML += `
                   <tr>
                     <td scope="row">${element.nombreSucursal}</td>
-                    <td id="cat">${element.ciudad}</td>
+                    <td id="ciud">${element.ciudad}</td>
                     <th> 
                       <button id="ed" class="btn btn-warning " style="width: 100%;" data-bs-toggle="modal" data-bs-target="#editar">Editar</button>
                       <button id="deleteSucursal" class="btn btn-danger" style="width: 100%;">Eliminar</button>
@@ -194,7 +194,7 @@ window.addEventListener('click',(e)=>{
     cont=0
   }
 })
-  //codigo para agregar nuevo Proveedor 
+  //codigo para agregar Sucursal 
     var bEnviar = document.getElementById("enviarSucursal");
     bEnviar.addEventListener ("click", function () {
         let nombreSucursal= document.getElementById ("nombreSucursal").value;
